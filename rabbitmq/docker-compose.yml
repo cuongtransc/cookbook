@@ -1,0 +1,27 @@
+#
+# syntax: https://docs.docker.com/compose/yml/
+#
+
+version: "2"
+
+services:
+    rabbitmq:
+        #restart: always
+        image: rabbitmq
+        expose:
+            - "15672"
+            - "5672"
+        ports:
+            - "0.0.0.0:15672:15672"
+            - "5672:5672"
+        hostname: rabbitmq
+        cpu_shares: 512             # 0.5 CPU
+        mem_limit: 1036870912        # 1 G RAM
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "100M"
+                max-file: "3"
+        #command: /usr/local/bin/gunicorn config.wsgi:application -w 2 -b :8000
+networks:
+    rabbitmq:
