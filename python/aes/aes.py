@@ -4,7 +4,7 @@ from Crypto import Random
 from sys import argv
 import traceback
 
-secret_key32 = "SDDHUI782KNJ2SDFJAF982WEFG982NIF"
+secret_key32 = "LKJHUI782K12DGAF982BUIF982NIF"
 
 class AESCipher:
     def __init__(self, key):
